@@ -1,0 +1,26 @@
+<div class="col-md-1 col-sm-1 col-xs-1 logo">
+    <a routerLink="/home">
+        <span class="fa fa-flash"></span>
+    </a>
+</div>
+
+<div class="col-md-5 align-left hidden-xs hidden-sm" *ngIf="user">
+    <a routerLink="/users-listing">
+       {{ user.place.name }}
+    </a>
+</div>
+
+<div class="col-md-2 col-sm-2 col-xs-4 col-md-offset-2 col-sm-offset-7">
+    <span *ngIf="user">
+        {{ user.name }}
+    </span>
+</div>
+
+<!-- Mobile menu toggle -->
+<div class="col-md-2 col-sm-2 col-xs-4 mobile-menu-toggle" (click)="isMobileMenuShown=!isMobileMenuShown">
+    <span class="fa fa-list"></span>
+</div>
+
+<mobile-menu *ngIf="isMobileMenuShown"></mobile-menu>
+
+<div class="mobile-menu-overlay" *ngIf="isMobileMenuShown"></div>

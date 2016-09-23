@@ -1,0 +1,43 @@
+// Custom fonts
+
+@font-face {
+  font-family: "Avenir Light";
+  src: url("../../fonts/Avenir-Light.ttf");
+}
+
+@font-face {
+  font-family: "Avenir Book";
+  src: url("../../fonts/Avenir-Book.ttf");
+}
+
+@font-face {
+  font-family: "Avenir Medium";
+  src: url("../../fonts/Avenir-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Avenir Heavy";
+  src: url("../../fonts/Avenir-Heavy.ttf");
+}
+
+$darkTextColor: #333;
+$brightTextColor: #CCC;
+$mainBrightBlue: #01AFF4;
+$sidebarBgColor: #353D52;
+$mainPagePadding: 25px;
+$mainBorderRadius: 3px;
+$headerHeight: 70px;
+
+$electricityColor: #5E00D2;
+
+$mainBoldFont: "Avenir Heavy";
+
+// Responsive variables
+$break-small: 700px;
+$break-large: 1200px;
+
+$mainLightFont: 'Avenir Light', sans-serif;
+$mainFont: 'Avenir Book', sans-serif;
+$mainMediumFont: 'Avenir Medium', sans-serif;
+$mainBoldFont: 'Avenir Heavy', sans-serif;
+$secondMainFont: 'Open Sans', sans-serif;

@@ -1,0 +1,33 @@
+<h2 class="centered">
+    Veuillez vous connecter
+</h2>
+
+<form>
+    <div class="col-md-12 input-container">
+        <input type="text"
+               [(ngModel)]="username"
+               name="username"
+               class="form-control"
+               placeholder="Email"/>
+    </div>
+    <div class="col-md-12 input-container">
+        <input type="password"
+               name="password"
+               [(ngModel)]="password"
+               class="form-control"
+               placeholder="Mot de passe"/>
+    </div>
+    <div class="col-md-6 button-container">
+        <button class="btn btn-default close-modal"
+                id="close-sign-in-modal"
+                (click)="signInModal.hide()">
+            Fermer
+        </button>
+    </div>
+    <div class="col-md-6 button-container">
+        <button class="btn btn-primary submit"
+                (click)="logIn()">
+            Connexion &nbsp; <span *ngIf="isLoading" class="fa fa-spinner fa-spin"></span>
+        </button>
+    </div>
+</form>

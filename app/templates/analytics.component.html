@@ -1,0 +1,22 @@
+<div class="col-md-12 period-list-container">
+    <div class="btn-group" role="group">
+        <button type="button"
+                *ngFor="let period of periodList"
+                [class.active]="period['alias'] == activePeriodAlias"
+                (click)="setActivePeriodAlias(period['alias'])"
+                class="btn btn-default">
+            {{ period['title'] }}
+        </button>
+    </div>
+</div>
+
+<div *ngFor="let period of periodList; let i = index">
+    <div [class.hidden]="period['alias'] != activePeriodAlias">
+        <!--<h3>{{ period['title'] }}</h3>-->
+        <br />
+        <div class="chart-container"
+             id="chartContainer_{{ period['alias'] }}">
+            <chart [options]="chartOptions[i]" (selection)="onChartSelection($event)"> </chart>
+        </div>
+    </div>
+</div>

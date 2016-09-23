@@ -1,0 +1,55 @@
+<!--
+<div class="col-md-2 col-sm-2 col-xs-2 col-md-offset-9"
+     id="login-btn"
+     *ngIf="!user">
+    <a (click)="signInModal.show()">
+        Connexion
+    </a>
+</div>
+-->
+<div class="col-md-2 col-sm-2 col-xs-2"
+     *ngIf="user"
+     id="logout-btn">
+    <a (click)="logout()">
+        Déconnexion
+    </a>
+</div>
+
+<div bsModal
+     #signInModal="bs-modal"
+     class="modal fade"
+     tabindex="-1"
+     role="dialog"
+     aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body row">
+                <div class="col-md-12 input-container">
+                    <input type="text"
+                           [(ngModel)]="username"
+                           class="form-control"
+                           placeholder="Email"/>
+                </div>
+                <div class="col-md-12 input-container">
+                    <input type="password"
+                           [(ngModel)]="password"
+                           class="form-control"
+                           placeholder="Mot de passe"/>
+                </div>
+                <div class="col-md-6 button-container">
+                    <button class="btn btn-default close-modal"
+                            id="close-sign-in-modal"
+                            (click)="signInModal.hide()">
+                        Fermer
+                    </button>
+                </div>
+                <div class="col-md-6 button-container">
+                    <button class="btn btn-primary submit"
+                            (click)="logIn()">
+                        Connexion
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

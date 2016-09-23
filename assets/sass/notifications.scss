@@ -1,0 +1,11 @@
+notifications {
+  display: block;
+  padding: $mainPagePadding;
+  width: 100%;
+
+  select, input, textarea {
+    width: auto !important;
+    float: left;
+    margin: 15px;
+  }
+}

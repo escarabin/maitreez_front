@@ -1,0 +1,89 @@
+<a *ngFor="let thing of things; let i = index"
+   (click)="showAnalyticsModal(thing)">
+    <div class="col-md-4 col-sm-6 consumption-type-container"
+         *ngIf="thing['data']">
+        <div class="consumption-type row">
+            <div class="current-consumption col-md-4 col-sm-4 col-xs-4">
+                <div class="knob-container">
+                    <ul>
+                        <li class="item_1"></li>
+                        <li class="item_2"></li>
+                        <li class="item_3"></li>
+                        <li class="item_4"></li>
+                        <li class="item_5"></li>
+                        <li class="item_6"></li>
+                        <li class="item_7"></li>
+                        <li class="item_8"></li>
+                        <li class="item_9"></li>
+                    </ul>
+                    <div class="needle"></div>
+                </div>
+                <span class="name">{{ thing['channels'][0]['name'] }}</span>
+                <h2>{{ thing['data']['lastUpdate'] }}</h2>
+                <span class="unit">{{ thing['channels'][0]['unit'] }}</span>
+                <h5>Instantané</h5>
+            </div>
+
+            <!--<span class="consumption-title">
+                Instantané
+            </span>
+            <br />
+            <span class="consumption-value">
+                <span class="value">{{ thing['data']['value'] }}</span> kw/h
+            </span>
+            <br />
+            <span class="consumption-title">
+                Cumul
+            </span>
+            <br />
+            <span class="consumption-value">
+                <span class="value">2564.77</span> kw/h
+            </span>-->
+
+            <div class="chart-container col-md-8 col-sm-8 col-xs-8" id="chartContainer{{ thing['uuid'] }}">
+                <chart [options]="chartOptions[i]" (selection)="onChartSelection($event)"> </chart>
+            </div>
+
+            <div class="consumption-totals-container col-md-8 col-sm-8 col-xs-8">
+                <div class="consumption-period col-md-4 col-sm-4 col-xs-4">
+                    <h3>Jour</h3>
+                    <h2>{{ thing['data']['today'] }}</h2>
+                </div>
+                <div class="consumption-period col-md-4 col-sm-4 col-xs-4">
+                    <h3>Mois</h3>
+                    <h2>{{ thing['data']['thisMonth'] }}</h2>
+                </div>
+                <div class="consumption-period col-md-4 col-sm-4 col-xs-4">
+                    <h3>Année</h3>
+                    <h2>{{ thing['data']['thisYear'] }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</a>
+
+<div class="modal fade" bsModal #analyticsModal="bs-modal" [config]="{backdrop: 'static'}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" aria-label="Close" (click)="analyticsModal.hide()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title"
+                    *ngIf="currentThing['channels']">
+                    Détail de la consommation en {{ currentThing['channels'][0]['name'] }}
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div *ngFor="let thing of things">
+                    <analytics *ngIf="thing['uuid'] == currentThing['uuid']"
+                               [thingId]="thing['uuid']"
+                               [channelAlias]="thing['channels'][0]['name']">
+
+                    </analytics>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

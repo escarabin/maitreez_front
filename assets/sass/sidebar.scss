@@ -1,0 +1,43 @@
+sidebar {
+  background: #172048;
+  display: block;
+  color: white;
+  height: 100%;
+  position: fixed;
+  width: 16.7%;
+
+  .logo {
+    text-align: center;
+    height: 90px;
+    width: 100%;
+    display: block;
+    padding: 15px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+
+    a {
+      color: white;
+
+      &:hover {
+        color: white;
+        text-decoration: none;
+      }
+
+      &.active li {
+        background-color: $sidebarBgColor;
+        border-left: 2px solid $mainBrightBlue;
+      }
+
+      li {
+        padding: 20px 30px;
+      }
+    }
+  }
+
+  @media screen and (max-width: $break-small) {
+    display: none;
+  }
+}

@@ -1,0 +1,40 @@
+header {
+  padding: $headerHeight / 2 - 12;
+  background: #3d4465;
+  border-bottom: 1px solid #CCC;
+  color: white;
+  height: $headerHeight;
+  text-align: right;
+
+  .logo {
+    text-align: center;
+    font-size: 2em;
+    margin-top: -5px;
+  }
+
+  .align-left {
+    text-align: left;
+  }
+
+  a {
+    color: white;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+    margin-top: 4px;
+    margin-left: 25px;
+  }
+}
+
+@media(max-width: $break-small) {
+  header {
+    .mobile-menu-toggle {
+      display: block;
+    }
+  }
+}

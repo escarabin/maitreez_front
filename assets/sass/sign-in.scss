@@ -1,0 +1,36 @@
+sign-in {
+
+  .input-container, .button-container {
+    padding: 0;
+  }
+
+  .input-container {
+    margin-bottom: 15px;
+  }
+
+  .button-container button {
+    height: 50px;
+    width: 100%;
+
+    &.close-modal {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &.submit {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  h2 {
+    margin-top: 50px;
+  }
+
+  form {
+    max-width: 300px;
+    width: 100%;
+    margin: auto;
+    margin-top: 50px;
+  }
+}

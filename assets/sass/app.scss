@@ -1,0 +1,44 @@
+@import 'variables';
+@import 'consumption';
+@import 'analytics';
+@import 'header';
+@import 'home';
+@import 'notifications';
+@import 'profile';
+@import 'sidebar';
+@import 'forms';
+@import 'users-listing';
+@import 'sign-in';
+@import 'mobile-menu';
+@import 'footer';
+@import 'knob';
+
+body {
+  color: $darkTextColor;
+  -webkit-font-smoothing: antialiased;
+  font-family: $mainFont;
+}
+
+app {
+  .sidebar-container, .page-container {
+    padding: 0;
+  }
+
+  router-outlet {
+
+  }
+}
+
+.row {
+  margin: 0;
+}
+
+.hidden {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.centered {
+  text-align: center;
+}
